@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: al-nginx-3
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: al-nginx-3
+    spec:
+      containers:
+      - name: al-nginx-3
+        image: quay.io/electric_al/quay_test:balls
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: electric-al-pull-secret

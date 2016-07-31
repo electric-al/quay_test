@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: al-nginx-3
+  labels:
+    app: al-nginx-3
+spec:
+  type: LoadBalancer
+  selector:
+    app: al-nginx-3
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 80
